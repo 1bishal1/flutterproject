@@ -44,14 +44,27 @@ class _detailPageState extends State<detailPage> {
         ),
       ),
           Padding(
-            padding: const EdgeInsets.only(left:15.0,right: 15),
+            padding: const EdgeInsets.only(left:15.0,right: 15.0),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text("Author Name"),
                 Text("Sep 25 2025")
               ],
             ),
-          )
+          ),
+
+          Container(
+            padding: EdgeInsets.all(15),
+            child: Text(
+              "This is the class before dashain and we are creating a news app"
+              "This is the class before dashain and we are creating a news app"
+              "This is the class before dashain and we are creating a news app"
+              "This is the class before dashain and we are creating a news app"
+              "This is the class before dashain and we are creating a news app",
+              style: TextStyle(fontWeight: FontWeight.normal,fontSize: 15),maxLines: 5,
+            ),
+          ),
 
         ],
       ),
