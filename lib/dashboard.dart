@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'detailPage.dart';
+
 class dashboard extends StatefulWidget {
   const dashboard({super.key});
 
@@ -10,36 +12,45 @@ class dashboard extends StatefulWidget {
 class _dashboardState extends State<dashboard> {
 
   horizontalcard(size,heading,date){
-    return Stack(
-      children: [
-        Container(
-          height: size.height/5,
-          width: size.width/1.5,
-          margin: EdgeInsets.only(left: 10),
-          decoration: BoxDecoration(
-              color: Colors.green,
-              borderRadius: BorderRadius.circular(15)
+    return GestureDetector(
+      onTap: (){
+            Navigator.of(context).push(
+              MaterialPageRoute<void>(
+                builder:(context)=>detailPage(),
+              ),
+            );
+      },
+      child: Stack(
+        children: [
+          Container(
+            height: size.height/5,
+            width: size.width/1.5,
+            margin: EdgeInsets.only(left: 10),
+            decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(15)
+            ),
           ),
-        ),
-        Positioned(
-            bottom: 15,
-            left: 15,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(heading,style: TextStyle(color: Colors.white
-                    ,fontSize: 18,fontWeight: FontWeight.bold),),
-                Text(date,style: TextStyle(color: Colors.white
-                    ,fontSize: 14,fontWeight: FontWeight.bold),)
-              ],
-            )),
-        Positioned(
-            right: 15,
-            bottom: 15,
-            child: Icon(
-              Icons.play_circle,color: Colors.white,size: 30,
-            ))
-      ],
+          Positioned(
+              bottom: 15,
+              left: 15,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(heading,style: TextStyle(color: Colors.white
+                      ,fontSize: 18,fontWeight: FontWeight.bold),),
+                  Text(date,style: TextStyle(color: Colors.white
+                      ,fontSize: 14,fontWeight: FontWeight.bold),)
+                ],
+              )),
+          Positioned(
+              right: 15,
+              bottom: 15,
+              child: Icon(
+                Icons.play_circle,color: Colors.white,size: 30,
+              ))
+        ],
+      ),
     );
   }
 
@@ -55,7 +66,7 @@ class _dashboardState extends State<dashboard> {
                 height: 100,
                 width: 120,
                 margin: EdgeInsets.only(right: 20),
-                decoration: BoxDecoration(color: Colors.green,
+                decoration: BoxDecoration(color: Colors.black,
                     borderRadius: BorderRadius.circular(15)
                 ),
               ),
