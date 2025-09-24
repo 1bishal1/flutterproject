@@ -55,7 +55,16 @@ class _dashboardState extends State<dashboard> {
   }
 
   verticalCard(size,heading,date, buttontext){
-    return Padding(
+    return GestureDetector(
+      onTap: (){
+        Navigator.of(context).push(
+          MaterialPageRoute<void>(
+            builder:(context)=>detailPage(),
+          ),
+        );
+      },
+      child: Padding(
+
       padding: const EdgeInsets.all(15.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -104,6 +113,7 @@ class _dashboardState extends State<dashboard> {
             ],
           )
         ],
+      ),
       ),
     );
   }
